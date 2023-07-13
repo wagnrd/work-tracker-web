@@ -9,7 +9,6 @@ struct DownloadTemplate {}
 
 #[get("/")]
 pub async fn page(request: actix_web::HttpRequest) -> impl actix_web::Responder {
-    println!("downloads");
     let template = DownloadTemplate {};
     ssr::render_page(template, request)
 }
