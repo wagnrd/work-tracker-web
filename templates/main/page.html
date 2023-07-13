@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+          rel="stylesheet"
+    >
+    <title>Work Tracker</title>
+</head>
+<body>
+    <nav class="container-fluid"
+         hx-boost="true"
+         hx-swap="afterend"
+    >
+        <ul>
+            <li><strong><a href="/">Work Tracker</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="/download/">Download</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li hx-boost="false">
+                <a class="outline secondary"
+                   href="https://github.com/wagnrd"
+                   role="button"
+                >Github</a>
+            </li>
+        </ul>
+    </nav>
+
+    <%- content %>
+
+    <footer>
+        <section>
+            © <%= trademark_year %> Denis Wagner. All rights reserved.<br />
+            All trademarks are the property of their respective owners.
+        </section>
+    </footer>
+</body>
+<script crossorigin="anonymous"
+        integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
+        src="https://unpkg.com/htmx.org@1.9.2"
+></script>
+</html>
