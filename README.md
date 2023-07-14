@@ -17,7 +17,7 @@ Install Rust via [Rustup](https://rustup.rs/).
 
 (Optional) For auto recompilation on edit install [cargo-watch](https://github.com/watchexec/cargo-watch):
 ```shell
-cargo binstall cargo-watch
+cargo install cargo-watch
 ```
 
 ### Run
