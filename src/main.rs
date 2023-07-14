@@ -5,6 +5,7 @@ mod utils;
 async fn main() -> std::io::Result<()> {
     actix_web::HttpServer::new(|| {
         actix_web::App::new()
+            .service(actix_files::Files::new("/static", "./static"))
             .service(pages::home::scope())
             .service(pages::download::scope())
     })
