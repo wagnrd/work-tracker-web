@@ -8,7 +8,7 @@ async fn main() -> std::io::Result<()> {
             .service(pages::home::scope())
             .service(pages::download::scope())
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("127.0.0.1", 8888))?
     .run()
     .await
 }
