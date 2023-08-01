@@ -29,7 +29,7 @@ cargo run
 
 (Optional) With auto recompilation on edit:
 ```shell
-cargo watch -x run
+watch -w src -w templates -w Cargo.toml -w Cargo.lock -c -q -x run
 ```
 
 ### Build
