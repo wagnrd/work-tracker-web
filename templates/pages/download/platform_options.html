@@ -1,0 +1,26 @@
+<h6>Stores</h6><p>
+    <% for store in stores.iter() { %>
+        <a href="<%= store.link_url %>"
+           role="button"
+           target="_blank"
+        ><%= store.name %></a>
+    <% } %>
+</p><h6>Installers</h6><p>
+    <% for installer in installers.iter() { %>
+        <a href="<%= installer.link_url %>"
+           role="button"
+           target="_blank"
+        ><%= installer.name %></a>
+    <% } %>
+</p><small>Also available for
+           <% for (i, other_platform) in other_platforms.iter().enumerate() { %>
+    <a><%= other_platform %></a><%=
+           if i < other_platforms.len() - 2 {
+           ", "
+           } else if i < other_platforms.len() - 1 {
+           " and "
+           } else {
+           "."
+           } %>
+           <% } %>
+</small>
