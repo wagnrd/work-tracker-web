@@ -9,11 +9,7 @@ impl actix::Actor for AutoRefreshWS {
 
 /// Handler for ws::Message message
 impl actix::StreamHandler<Result<ws::Message, ws::ProtocolError>> for AutoRefreshWS {
-    fn handle(&mut self, msg: Result<ws::Message, ws::ProtocolError>, ctx: &mut Self::Context) {
-        if let Ok(ws::Message::Ping(msg)) = msg {
-            ctx.pong(&msg)
-        }
-    }
+    fn handle(&mut self, _msg: Result<ws::Message, ws::ProtocolError>, _ctx: &mut Self::Context) {}
 }
 
 #[get("/dev/autorefresh")]
@@ -21,7 +17,5 @@ pub async fn websocket(
     req: actix_web::HttpRequest,
     stream: web::Payload,
 ) -> impl actix_web::Responder {
-    let resp = ws::start(AutoRefreshWS {}, &req, stream);
-    println!("{:?}", resp);
-    resp
+    ws::start(AutoRefreshWS {}, &req, stream)
 }

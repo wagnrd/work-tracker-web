@@ -11,11 +11,13 @@ This is the web appearance for the Work Tracker app.
 - Frontend: AlpineJS (Javascript)
 
 ## Development
+
 ### Setup
 
 Install Rust via [Rustup](https://rustup.rs/).
 
 (Optional) For auto recompilation on edit install [cargo-watch](https://github.com/watchexec/cargo-watch):
+
 ```shell
 cargo install cargo-watch
 ```
@@ -23,23 +25,27 @@ cargo install cargo-watch
 ### Run
 
 Start dev server:
+
 ```shell
 cargo run
 ```
 
 (Optional) With auto recompilation on edit:
+
 ```shell
-watch -w src -w templates -w Cargo.toml -w Cargo.lock -c -q -x run
+cargo watch -w src -w static -w templates -w Cargo.toml -w Cargo.lock -x run
 ```
 
 ### Build
 
 Debug:
+
 ```shell
 cargo build
 ```
 
 Release:
+
 ```shell
 cargo build -r
 ```
