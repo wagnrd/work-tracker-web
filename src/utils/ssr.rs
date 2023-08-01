@@ -29,9 +29,7 @@ where
         .unwrap()
     };
 
-    actix_web::HttpResponse::Ok()
-        .append_header(("Cache-Control", "max-age=3600, must-revalidate"))
-        .body(result)
+    actix_web::HttpResponse::Ok().body(result)
 }
 
 pub fn render<Template>(template: Template) -> impl actix_web::Responder

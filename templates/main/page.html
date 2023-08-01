@@ -18,7 +18,7 @@
 <body>
     <nav class="container-fluid"
          hx-boost="true"
-         hx-swap="afterend"
+         hx-target="#content"
     >
         <ul>
             <li><strong><a href="/">Work Tracker</a></strong></li>
@@ -29,14 +29,16 @@
             <li hx-boost="false">
                 <a class="outline secondary"
                    href="https://github.com/wagnrd"
-                   target="_blank"
                    role="button"
+                   target="_blank"
                 >Github</a>
             </li>
         </ul>
     </nav>
 
-    <%- content %>
+    <div id="content">
+        <%- content %>
+    </div>
 
     <footer>
         <section>
