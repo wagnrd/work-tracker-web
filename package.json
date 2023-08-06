@@ -11,7 +11,6 @@
         "format": "prettier --plugin-search-dir . --write ."
     },
     "devDependencies": {
-        "@neoconfetti/svelte": "1.0.0",
         "@sveltejs/adapter-auto": "2.1.0",
         "@sveltejs/kit": "1.22.4",
         "@types/cookie": "0.5.1",
@@ -23,5 +22,10 @@
         "typescript": "5.1.6",
         "vite": "4.4.8"
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "@svelteuidev/core": "0.14.0",
+        "@svelteuidev/composables": "0.14.0"
+
+    }
 }

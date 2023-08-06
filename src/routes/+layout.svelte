@@ -1,53 +1,43 @@
 <script>
-    import Header from './Header.svelte';
-    import './styles.css';
+    import {
+        AppShell,
+        Button,
+        Center,
+        Flex,
+        Footer,
+        Group,
+        Header,
+        Title,
+    } from '@svelteuidev/core';
+    import Logo from './Logo.svelte';
 </script>
 
-<div class="app">
-    <Header />
+<svelte:head>
+    <title>Work Tracker</title>
+    <meta name="description" content="Work Tracker web page" />
+</svelte:head>
 
-    <main>
-        <slot />
-    </main>
+<AppShell>
+    <Header height="1">
+        <Flex justify={'space-between'}>
+            <Group>
+                <Logo />
+                <Title order={1} size={'lg'}>Work Tracker</Title>
+            </Group>
+            <Group position={'right'} spacing={'xs'}>
+                <Button variant={'subtle'}>Download</Button>
+                <Button variant={'subtle'}>Blog</Button>
+                <Button variant={'default'}>Github</Button>
+            </Group>
+        </Flex>
+    </Header>
 
-    <footer>
-        <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-    </footer>
-</div>
+    <slot />
+
+    <Footer height="50">
+        <Center>© 2023 wagnrd</Center>
+    </Footer>
+</AppShell>
 
 <style>
-    .app {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        width: 100%;
-        max-width: 64rem;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 12px;
-    }
-
-    footer a {
-        font-weight: bold;
-    }
-
-    @media (min-width: 480px) {
-        footer {
-            padding: 12px 0;
-        }
-    }
 </style>
